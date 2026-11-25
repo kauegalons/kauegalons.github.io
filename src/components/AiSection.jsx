@@ -1,4 +1,4 @@
-import { aiFlow, aiPrinciples } from "../content.js";
+import { aiFlow } from "../content.js";
 
 export default function AiSection({ t, lang }) {
   return (
@@ -15,16 +15,6 @@ export default function AiSection({ t, lang }) {
           </li>
         ))}
       </ol>
-
-      <h3 className="ai__subtitle">{t.principlesTitle}</h3>
-      <div className="principles">
-        {aiPrinciples[lang].map((p) => (
-          <div key={p.title} className="principle">
-            <h4>{p.title}</h4>
-            <p>{p.text}</p>
-          </div>
-        ))}
-      </div>
 
       <div className="ai__next">
         <h3 className="ai__subtitle">{t.nextTitle}</h3>

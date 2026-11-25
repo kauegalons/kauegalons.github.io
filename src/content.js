@@ -144,26 +144,6 @@ const aiFlow = {
   ],
 };
 
-// Conceitos de engenharia de IA aplicados no dia a dia
-const aiPrinciples = {
-  pt: [
-    { title: "Orquestração", text: "A sessão principal delega cada etapa a um subagente especializado e recebe o relatório de volta." },
-    { title: "Engenharia de contexto", text: "Constitution, arquivo de regras (CLAUDE.md), skills carregadas sob demanda e memória persistente entre sessões." },
-    { title: "Custo", text: "Compressão de saída (caveman) e contexto enxuto para gastar menos tokens." },
-    { title: "Guardrails e humano no loop", text: "Confirmação passo a passo, revisão só de leitura e nada publicado sem OK. Nota de risco de alucinação, credenciais só por variável de ambiente (nunca em resposta, arquivo ou log) e sistemas antigos só com leitura." },
-    { title: "Quality gates", text: "Analyze, checklist, TDD e Sonar antes de qualquer código seguir adiante." },
-    { title: "Portabilidade", text: "O time trocou de ferramenta (Kiro → Claude Code) e os agentes continuaram os mesmos. O valor está no processo e no contexto, não na ferramenta." },
-  ],
-  en: [
-    { title: "Orchestration", text: "The main session delegates each step to a specialized subagent and gets a report back." },
-    { title: "Context engineering", text: "Constitution, a rules file (CLAUDE.md), on-demand skills and persistent memory across sessions." },
-    { title: "Cost", text: "Output compression (caveman) and lean context to spend fewer tokens." },
-    { title: "Guardrails & human in the loop", text: "Step-by-step confirmation, read-only review and nothing published without approval. Hallucination-risk notes, credentials only via environment variables (never in a response, file or log) and legacy systems read-only." },
-    { title: "Quality gates", text: "Analyze, checklist, TDD and Sonar before any code moves forward." },
-    { title: "Portability", text: "The team switched tools (Kiro → Claude Code) and the agents stayed the same. The value lives in the process and the context, not the tool." },
-  ],
-};
-
 const tech = ["Java 11 · 17 · 21", "Spring Boot", "AWS", "Claude Code", "Python", "PostgreSQL", "Microservices", "Docker / Kubernetes", "JUnit", "TDD"];
 
 export const content = {
@@ -177,24 +157,23 @@ export const content = {
         "IA aplicada ao desenvolvimento.",
         "software ponta a ponta, com IA.",
       ],
-      bio: "Engenheiro de software em Curitiba. Construo backends em Java e Spring Boot e fluxos de IA com agentes orquestrados, ponta a ponta. Busco vagas remotas como AI Engineer.",
+      bio: "Software Engineer especializado em backend Java e Spring Boot, trabalhando com agentes de IA em todo o ciclo de desenvolvimento. Aberto a vagas remotas como AI Engineer.",
       cta: "Fale comigo",
       cta2: "Ver projetos",
     },
     about: {
       title: "sobre mim",
       paragraphs: [
-        "Sou engenheiro de software com 5 anos de experiência em backend Java e Spring Boot, construindo microsserviços para plataformas grandes e críticas para o negócio. Sou formado em Ciência da Computação pela Universidade Positivo e falo inglês avançado (C1).",
+        "Sou Software Engineer com 5 anos de experiência em backend Java e Spring Boot, construindo microsserviços para plataformas grandes e críticas para o negócio. Sou formado em Ciência da Computação pela Universidade Positivo e trabalho em inglês fluente (C1), com experiência diária em times internacionais.",
         "Na Wipro, migrei sistemas bancários legados de COBOL para Java em ambiente mainframe e fui promovido de Trainee a Desenvolvedor Java. Depois, num time internacional em inglês, desenvolvi microsserviços em Java e Spring Boot para a plataforma de onboarding de dispositivos de uma fabricante global de tecnologia. Na Senior Sistemas, numa plataforma de HCM com 40+ microsserviços, liderei a migração do Java 11 para o 17, construí o subsistema de notificações de ponta a ponta e atuo como revisor de código em 30+ serviços.",
-        "Hoje construo fluxos de desenvolvimento com IA: orquestro agentes e subagentes especializados, com engenharia de contexto, guardrails e quality gates em cada etapa. Busco vagas remotas como AI Engineer, construindo sistemas com LLMs integrados ao produto, RAG e evals.",
+        "No dia a dia, uso agentes e subagentes de IA especializados em cada etapa do desenvolvimento, com engenharia de contexto, guardrails e quality gates. Busco vagas remotas como AI Engineer, construindo produtos com LLMs, RAG e evals.",
       ],
       techIntro: "Tecnologias com que tenho trabalhado:",
       tech,
     },
     ai: {
       title: "IA no dia a dia",
-      lead: "Desenvolvo com agentes de IA orquestrados no Claude Code, com os agentes especializados do time. Cada etapa roda com contexto definido, guardrails e quality gates, e nada vai adiante sem a minha revisão.",
-      principlesTitle: "Conceitos que aplico no dia a dia",
+      lead: "Trabalho com os agentes especializados do time no Claude Code, num fluxo guiado por especificação: cada etapa tem um agente dedicado, contexto definido e um quality gate, e nada avança sem a minha revisão.",
       nextTitle: "Próximo passo",
       next: "Migrar para AI Engineer / Forward Deployed Engineer: levar LLMs para dentro do produto, com RAG, evals, custo e latência sob controle em produção.",
       tools: ["Claude Code", "GitHub Spec Kit", "MCP", "Skills", "Subagentes"],
@@ -209,7 +188,7 @@ export const content = {
     contact: {
       title: "contato",
       heading: "Bora conversar?",
-      text: "Estou aberto a vagas remotas como AI Engineer e em Java, e também a trocar ideia sobre agentes, LLMs e backend. Minha caixa de entrada está sempre aberta!",
+      text: "Estou aberto a vagas remotas como AI Engineer ou backend Java, e sempre disposto a conversar sobre agentes, LLMs e sistemas distribuídos. Minha caixa de entrada está sempre aberta.",
       button: "Dizer oi 👋",
     },
     footer: "Feito com ☕ e React por Kauê Galon",
@@ -224,24 +203,23 @@ export const content = {
         "AI applied to software development.",
         "end-to-end software, with AI.",
       ],
-      bio: "Software engineer based in Curitiba, Brazil. I build Java / Spring Boot backends and AI workflows with orchestrated agents, end to end. Looking for remote AI Engineer roles.",
+      bio: "Software Engineer specializing in Java and Spring Boot backends, working with AI agents across the entire development lifecycle. Open to remote AI Engineer roles.",
       cta: "Get in touch",
       cta2: "See projects",
     },
     about: {
       title: "about me",
       paragraphs: [
-        "I'm a software engineer with 5 years of experience in Java and Spring Boot backends, building microservices for large-scale, business-critical platforms. I hold a Computer Science degree from Universidade Positivo and speak advanced English (C1).",
+        "I'm a Software Engineer with 5 years of experience in Java and Spring Boot, building microservices for large-scale, business-critical platforms. I hold a B.Sc. in Computer Science from Universidade Positivo and work fluently in English (C1), with daily experience on international teams. Based in Brazil (UTC−3).",
         "At Wipro, I migrated legacy banking systems from COBOL to Java in a mainframe environment and was promoted from Trainee to Java Developer. Then, in an international English-speaking team, I built Java and Spring Boot microservices for the device onboarding platform of a global technology manufacturer. At Senior Sistemas, on an HCM platform with 40+ microservices, I led the Java 11 → 17 migration, built the notification subsystem end to end and act as a code reviewer across 30+ services.",
-        "Today I build AI-driven development workflows: I orchestrate specialized agents and subagents, with context engineering, guardrails and quality gates at every step. I'm looking for remote AI Engineer roles, building systems with LLMs integrated into the product, RAG and evals.",
+        "Day to day, I run specialized AI agents and subagents at every stage of development, backed by context engineering, guardrails and quality gates. I'm looking for remote AI Engineer roles, building LLM-powered products with RAG and evals.",
       ],
       techIntro: "Technologies I've been working with:",
       tech,
     },
     ai: {
       title: "AI in my daily work",
-      lead: "I develop with AI agents orchestrated in Claude Code, using my team's specialized agents. Every step runs with defined context, guardrails and quality gates, and nothing moves forward without my review.",
-      principlesTitle: "Concepts I apply every day",
+      lead: "I work with my team's specialized agents in Claude Code, in a spec-driven workflow: each stage has a dedicated agent, scoped context and a quality gate, and nothing moves forward without my review.",
       nextTitle: "Next step",
       next: "Move into an AI Engineer / Forward Deployed Engineer role: bringing LLMs into the product, with RAG, evals, and cost and latency under control in production.",
       tools: ["Claude Code", "GitHub Spec Kit", "MCP", "Skills", "Subagents"],
@@ -256,7 +234,7 @@ export const content = {
     contact: {
       title: "contact",
       heading: "Let's talk?",
-      text: "I'm open to remote AI Engineer and Java roles, and always happy to chat about agents, LLMs and backend. My inbox is always open!",
+      text: "I'm open to remote AI Engineer and backend Java roles, and always happy to talk about agents, LLMs and distributed systems. My inbox is always open.",
       button: "Say hi 👋",
     },
     footer: "Built with ☕ and React by Kauê Galon",
@@ -264,5 +242,5 @@ export const content = {
 };
 
 export const projects = { featured, others };
-export { aiFlow, aiPrinciples };
+export { aiFlow };
 export { experience } from "./experience.js";

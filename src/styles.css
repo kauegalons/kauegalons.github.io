@@ -146,10 +146,6 @@ main { margin-left: var(--side); }
 .flow__agents { font-size: .72rem; margin-bottom: 10px; }
 .flow__step p:last-child { font-size: .92rem; }
 .ai__subtitle { color: var(--text-strong); font-size: 1.25rem; margin: 60px 0 22px; }
-.principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 40px; }
-.principle { border-left: 2px solid var(--accent); padding: 2px 0 2px 18px; }
-.principle h4 { color: var(--text-strong); font-size: 1rem; margin-bottom: 4px; }
-.principle p { font-size: .94rem; }
 .ai__next { max-width: 720px; }
 .ai__next .ai__subtitle { margin-top: 56px; }
 
@@ -273,7 +269,7 @@ main { margin-left: var(--side); }
   .feat__body, .feat--right .feat__body { padding: 0 8px; }
   .featured { gap: 70px; }
   .tech-grid { grid-template-columns: repeat(2, 1fr); }
-  .flow, .principles { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
