@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { starLabels } from "../experience.js";
-import StarList from "./StarList.jsx";
 
 export default function Experience({ items, lang }) {
   const [active, setActive] = useState(0);
   const job = items[active];
-  const L = starLabels[lang];
 
   return (
     <div className="tabs">
@@ -29,7 +26,9 @@ export default function Experience({ items, lang }) {
         </h3>
         <p className="mono muted period">{job.period[lang]}</p>
         {job.context && <p className="context">{job.context[lang]}</p>}
-        <StarList items={job.star[lang]} labels={L} extraLabel={L.ai} />
+        <ul className="bullets">
+          {job.bullets[lang].map((b) => <li key={b}>{b}</li>)}
+        </ul>
       </div>
     </div>
   );

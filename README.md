@@ -44,8 +44,7 @@ Todo push na branch `main` faz o build e publica no GitHub Pages automaticamente
 | Arquivo | O que tem |
 | --- | --- |
 | `src/content.js` | Textos em PT e EN, projetos e o fluxo de IA |
-| `src/experience.js` | Experiências no método STAR |
-| `src/aiCases.js` | Casos reais com IA no método STAR |
+| `src/experience.js` | Experiências, em bullets |
 | `public/foto.jpg` | Foto da página inicial |
 | `public/sobre.jpg` | Foto da seção "sobre" (enquanto não existir, aparece o quadro "KG") |
 

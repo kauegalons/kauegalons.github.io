@@ -168,39 +168,9 @@ main { margin-left: var(--side); }
 .period { margin: 4px 0 14px; letter-spacing: .04em; }
 .context { font-size: .95rem; font-style: italic; margin-bottom: 18px; }
 .bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.bullets li { display: flex; }
+.bullets li { display: flex; font-size: .95rem; }
+.bullets li::before { flex-shrink: 0; }
 
-/* STAR */
-.stars { display: flex; flex-direction: column; gap: 10px; }
-.star { background: var(--bg-2); border-radius: 10px; border-left: 2px solid var(--bg-3); transition: border-color .25s; }
-.star[open], .star:hover { border-left-color: var(--accent); }
-.star summary {
-  list-style: none; cursor: pointer; padding: 14px 44px 14px 18px; position: relative;
-  display: flex; flex-direction: column; gap: 2px;
-}
-.star summary::-webkit-details-marker { display: none; }
-.star summary::after {
-  content: "+"; position: absolute; right: 18px; top: 12px; font-family: var(--mono); color: var(--accent); font-size: 1.2rem;
-  transition: transform .25s var(--ease);
-}
-.star[open] summary::after { transform: rotate(45deg); }
-.star__title { color: var(--text-strong); font-weight: 600; font-size: .98rem; }
-.star__result { font-size: .86rem; color: var(--muted); }
-.star[open] .star__result { display: none; }
-.star__body { padding: 0 18px 16px; display: flex; flex-direction: column; gap: 10px; animation: rise .35s var(--ease) both; }
-.star__row { display: grid; grid-template-columns: 118px 1fr; gap: 12px; font-size: .93rem; }
-.star__row dt { font-family: var(--mono); font-size: .74rem; color: var(--muted); padding-top: 3px; display: flex; align-items: flex-start; gap: 8px; text-transform: uppercase; letter-spacing: .04em; }
-.star__letter {
-  display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 5px; flex-shrink: 0;
-  background: var(--accent-soft); color: var(--accent); font-weight: 500; margin-top: -2px;
-}
-.star__row--r dd { color: var(--accent); }
-.star__row--ai { margin-top: 4px; padding-top: 12px; border-top: 1px dashed var(--bg-3); }
-.star__row--ai dd { font-style: italic; color: var(--text); }
-.star__row--ai .star__letter { background: rgba(160, 140, 255, .15); color: #b4a8ff; }
-@media (max-width: 820px) {
-  .star__row { grid-template-columns: 1fr; gap: 4px; }
-}
 
 /* ---------- Projects ---------- */
 .featured { display: flex; flex-direction: column; gap: 90px; margin-bottom: 110px; }

@@ -144,22 +144,27 @@ const aiFlow = {
   ],
 };
 
+// Conceitos de engenharia de IA aplicados no dia a dia
 const aiPrinciples = {
   pt: [
-    { title: "Humano no controle", text: "Confirmo os passos, respondo as dúvidas e nada é publicado sem o meu OK." },
-    { title: "Confiar, mas conferir", text: "Confiro no código o que o agente afirma e comparo com a linha de base antes de culpar ou inocentar uma mudança." },
-    { title: "Custo e contexto", text: "Skills carregadas só quando precisa e compressão de texto para gastar menos tokens." },
-    { title: "Guardrails", text: "Credenciais só em variável de ambiente, sistemas legados só leitura e operação irreversível só com plano revisado." },
+    { title: "Orquestração", text: "A sessão principal delega cada etapa a um subagente especializado e recebe o relatório de volta." },
+    { title: "Engenharia de contexto", text: "Constitution, arquivo de regras (CLAUDE.md), skills carregadas sob demanda e memória persistente entre sessões." },
+    { title: "Custo", text: "Compressão de saída (caveman) e contexto enxuto para gastar menos tokens." },
+    { title: "Guardrails e humano no loop", text: "Confirmação passo a passo, revisão só de leitura e nada publicado sem OK. Nota de risco de alucinação, credenciais só por variável de ambiente (nunca em resposta, arquivo ou log) e sistemas antigos só com leitura." },
+    { title: "Quality gates", text: "Analyze, checklist, TDD e Sonar antes de qualquer código seguir adiante." },
+    { title: "Portabilidade", text: "O time trocou de ferramenta (Kiro → Claude Code) e os agentes continuaram os mesmos. O valor está no processo e no contexto, não na ferramenta." },
   ],
   en: [
-    { title: "Human in the loop", text: "I confirm steps, answer open questions, and nothing gets published without my OK." },
-    { title: "Trust, but verify", text: "I check the agent's claims against the code and compare with a baseline before blaming or clearing a change." },
-    { title: "Cost & context", text: "Skills loaded only when needed and compressed output to spend fewer tokens." },
-    { title: "Guardrails", text: "Credentials only in environment variables, legacy systems read-only, irreversible operations only after a reviewed plan." },
+    { title: "Orchestration", text: "The main session delegates each step to a specialized subagent and gets a report back." },
+    { title: "Context engineering", text: "Constitution, a rules file (CLAUDE.md), on-demand skills and persistent memory across sessions." },
+    { title: "Cost", text: "Output compression (caveman) and lean context to spend fewer tokens." },
+    { title: "Guardrails & human in the loop", text: "Step-by-step confirmation, read-only review and nothing published without approval. Hallucination-risk notes, credentials only via environment variables (never in a response, file or log) and legacy systems read-only." },
+    { title: "Quality gates", text: "Analyze, checklist, TDD and Sonar before any code moves forward." },
+    { title: "Portability", text: "The team switched tools (Kiro → Claude Code) and the agents stayed the same. The value lives in the process and the context, not the tool." },
   ],
 };
 
-const tech = ["Java 17", "Spring Boot", "LangChain4j", "Claude Code", "Spec-driven dev", "Python", "PostgreSQL", "Microservices", "Docker / Kubernetes", "JUnit · TDD"];
+const tech = ["Java 11 · 17 · 21", "Spring Boot", "AWS", "Claude Code", "Python", "PostgreSQL", "Microservices", "Docker / Kubernetes", "JUnit", "TDD"];
 
 export const content = {
   pt: {
@@ -170,32 +175,29 @@ export const content = {
       typed: [
         "Java & Spring Boot no backend.",
         "IA aplicada ao desenvolvimento.",
-        "da spec ao código, com agentes.",
+        "software ponta a ponta, com IA.",
       ],
-      bio: "Engenheiro de software em Curitiba. Construo backends em Java e Spring Boot e uso IA de forma estruturada no desenvolvimento, da especificação ao code review. Agora estou me preparando para construir produtos com IA dentro.",
+      bio: "Engenheiro de software em Curitiba. Construo backends em Java e Spring Boot e já construo com IA, ponta a ponta. Busco oportunidades como AI Engineer.",
       cta: "Fale comigo",
       cta2: "Ver projetos",
     },
     about: {
       title: "sobre mim",
       paragraphs: [
-        "Sou engenheiro de software com cerca de 4 anos e meio de experiência em backend Java e Spring Boot, construindo microsserviços para plataformas grandes e críticas para o negócio.",
-        "Comecei como trainee na Wipro, migrando sistemas bancários de COBOL para Java, e fui promovido a desenvolvedor. Depois, ainda pela Wipro, fui para um time internacional, em inglês, numa plataforma de microsserviços de uma fabricante global de tecnologia. Desde outubro de 2025 estou na Senior Sistemas, onde entrego funcionalidades e reviso código de mais de 30 serviços.",
-        "No último ano a IA mudou a forma como eu trabalho. Hoje quero ir além de usar IA: quero construir sistemas com IA, como LLMs integrados ao produto, RAG e evals.",
-        "Me formei em Ciência da Computação pela Universidade Positivo em dezembro de 2025, trabalhando durante toda a faculdade, e falo inglês em nível avançado (C1).",
+        "Sou engenheiro de software com 5 anos de experiência em backend Java e Spring Boot, construindo microsserviços para plataformas grandes e críticas para o negócio. Sou formado em Ciência da Computação pela Universidade Positivo e falo inglês avançado (C1).",
+        "Na Wipro, migrei sistemas bancários legados de COBOL para Java em ambiente mainframe e fui promovido de Trainee a Desenvolvedor Java. Depois, num time internacional em inglês, desenvolvi microsserviços em Java e Spring Boot para a plataforma de onboarding de dispositivos de uma fabricante global de tecnologia. Na Senior Sistemas, numa plataforma de HCM com 40+ microsserviços, liderei a migração do Java 11 para o 17, construí o subsistema de notificações de ponta a ponta e atuo como revisor de código em 30+ serviços.",
+        "Hoje já construo com IA no dia a dia e busco oportunidades como AI Engineer, construindo sistemas com LLMs integrados ao produto, RAG e evals.",
       ],
       techIntro: "Tecnologias com que tenho trabalhado:",
       tech,
     },
     ai: {
       title: "IA no dia a dia",
-      lead: "Não uso IA só pedindo código num chat. Uso o Claude Code com agentes especializados do time, seguindo o GitHub Spec Kit, um fluxo de desenvolvimento guiado por especificação. Eu conduzo cada etapa, confiro o que os agentes afirmam e passo feedback quando eles erram.",
-      principlesTitle: "Como eu mantenho a IA honesta",
-      casesTitle: "Casos reais, no método STAR",
-      lessonLabel: "Lição",
+      lead: "Desenvolvo com agentes de IA orquestrados no Claude Code, com os agentes especializados do time. Cada etapa roda com contexto definido, guardrails e quality gates, e nada vai adiante sem a minha revisão.",
+      principlesTitle: "Conceitos que aplico no dia a dia",
       nextTitle: "Próximo passo",
-      next: "Hoje eu uso e ajudo a melhorar agentes. O próximo passo é construir IA que atende o usuário final: LLMs integrados ao produto, RAG, evals automatizadas, custo e latência em produção. O SmartFridge, com LangChain4j, é onde eu já estou praticando isso.",
-      tools: ["Claude Code", "GitHub Spec Kit", "MCP", "Skills", "LangChain4j"],
+      next: "Migrar para AI Engineer / Forward Deployed Engineer: levar LLMs para dentro do produto, com RAG, evals, custo e latência sob controle em produção.",
+      tools: ["Claude Code", "GitHub Spec Kit", "MCP", "Skills", "Subagentes"],
     },
     experience: { title: "experiência" },
     projects: {
@@ -220,32 +222,29 @@ export const content = {
       typed: [
         "Java & Spring Boot on the backend.",
         "AI applied to software development.",
-        "from spec to code, with agents.",
+        "end-to-end software, with AI.",
       ],
-      bio: "Software engineer based in Curitiba, Brazil. I build Java / Spring Boot backends and use AI in a structured way across development, from specification to code review. Now I'm preparing to build products with AI inside.",
+      bio: "Software engineer based in Curitiba, Brazil. I build Java / Spring Boot backends and I already build with AI, end to end. Looking for opportunities as an AI Engineer.",
       cta: "Get in touch",
       cta2: "See projects",
     },
     about: {
       title: "about me",
       paragraphs: [
-        "I'm a software engineer with about 4.5 years of experience in Java and Spring Boot backends, building microservices for large-scale, business-critical platforms.",
-        "I started as a trainee at Wipro, migrating banking systems from COBOL to Java, and was promoted to developer. Then, still through Wipro, I joined an international, English-speaking team working on a microservices platform for a global technology manufacturer. Since October 2025 I've been at Senior Sistemas, shipping features and reviewing code across 30+ services.",
-        "Over the last year AI changed the way I work. Now I want to go beyond using AI and build AI systems: LLMs integrated into the product, RAG and evals.",
-        "I graduated in Computer Science from Universidade Positivo in December 2025, working throughout college, and I speak advanced English (C1).",
+        "I'm a software engineer with 5 years of experience in Java and Spring Boot backends, building microservices for large-scale, business-critical platforms. I hold a Computer Science degree from Universidade Positivo and speak advanced English (C1).",
+        "At Wipro, I migrated legacy banking systems from COBOL to Java in a mainframe environment and was promoted from Trainee to Java Developer. Then, in an international English-speaking team, I built Java and Spring Boot microservices for the device onboarding platform of a global technology manufacturer. At Senior Sistemas, on an HCM platform with 40+ microservices, I led the Java 11 → 17 migration, built the notification subsystem end to end and act as a code reviewer across 30+ services.",
+        "Today I already build with AI every day, and I'm looking for opportunities as an AI Engineer, building systems with LLMs integrated into the product, RAG and evals.",
       ],
       techIntro: "Technologies I've been working with:",
       tech,
     },
     ai: {
       title: "AI in my daily work",
-      lead: "I don't just ask a chat for code. I use Claude Code with my team's specialized agents, following GitHub Spec Kit, a spec-driven development flow. I drive each step, verify what the agents claim and give feedback when they get it wrong.",
-      principlesTitle: "How I keep AI honest",
-      casesTitle: "Real cases, in STAR format",
-      lessonLabel: "Lesson",
+      lead: "I develop with AI agents orchestrated in Claude Code, using my team's specialized agents. Every step runs with defined context, guardrails and quality gates, and nothing moves forward without my review.",
+      principlesTitle: "Concepts I apply every day",
       nextTitle: "Next step",
-      next: "Today I use agents and help improve them. The next step is building AI that serves end users: LLMs integrated into the product, RAG, automated evals, cost and latency in production. SmartFridge, with LangChain4j, is where I'm already practicing this.",
-      tools: ["Claude Code", "GitHub Spec Kit", "MCP", "Skills", "LangChain4j"],
+      next: "Move into an AI Engineer / Forward Deployed Engineer role: bringing LLMs into the product, with RAG, evals, and cost and latency under control in production.",
+      tools: ["Claude Code", "GitHub Spec Kit", "MCP", "Skills", "Subagents"],
     },
     experience: { title: "experience" },
     projects: {
