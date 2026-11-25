@@ -43,6 +43,12 @@ export default function Experience({ items, lang }) {
                     <dd>{item[k]}</dd>
                   </div>
                 ))}
+                {item.ai && (
+                  <div className="star__row star__row--ai">
+                    <dt><span className="star__letter">✦</span>{L.ai}</dt>
+                    <dd>{item.ai}</dd>
+                  </div>
+                )}
               </dl>
             </details>
           ))}

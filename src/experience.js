@@ -1,8 +1,8 @@
 // Experiências — cada conquista no método STAR (Situação, Tarefa, Ação, Resultado)
 
 export const starLabels = {
-  pt: { s: "Situação", t: "Tarefa", a: "Ação", r: "Resultado" },
-  en: { s: "Situation", t: "Task", a: "Action", r: "Result" },
+  pt: { s: "Situação", t: "Tarefa", a: "Ação", r: "Resultado", ai: "Ponte com IA" },
+  en: { s: "Situation", t: "Task", a: "Action", r: "Result", ai: "AI bridge" },
 };
 
 export const experience = [
@@ -29,6 +29,7 @@ export const experience = [
           t: "Liderar a migração para Java 17 sem travar as entregas nem quebrar os serviços dependentes.",
           a: "Dividi o trabalho em quatro frentes coordenadas, atualizei QueryDSL e as bibliotecas internas, reconciliei versões pelo Maven BOM central, troquei APIs depreciadas, corrigi o log que mudou com o JDK novo e consertei a suíte de testes sem desligar nenhum teste.",
           r: "O serviço continuou publicável a cada passo, e a migração foi levada depois para um segundo serviço pelo mesmo caminho.",
+          ai: "Dividir uma mudança grande em partes que funcionam sozinhas é o que o fluxo de spec, plano e tarefas faz com os agentes.",
         },
         {
           title: "Subsistema de notificações de ponta a ponta",
@@ -42,7 +43,7 @@ export const experience = [
           s: "Uma versão do serviço de notificações foi para produção com defeito.",
           t: "Estabilizar rápido e entregar a funcionalidade corretamente.",
           a: "Diagnostiquei a causa, fiz um revert controlado da branch, entreguei a funcionalidade de novo de forma limpa e resolvi os apontamentos de análise estática que o incidente revelou.",
-          r: "Produção estabilizada e funcionalidade entregue sem o defeito, com o código mais limpo do que antes.",
+          r: "Produção estabilizada e funcionalidade entregue sem o defeito, com o código mais limpo do que antes. Primeiro estabilizar, depois corrigir direito.",
         },
         {
           title: "Brecha de permissão fechada",
@@ -50,6 +51,7 @@ export const experience = [
           t: "Fechar a brecha de forma que não pudesse ser contornada pelo cliente.",
           a: "Corrigi a validação na API e na interface, em vez de só esconder o botão, e corrigi também uma falha de acesso a recurso.",
           r: "Ações sensíveis protegidas nas duas camadas.",
+          ai: "Com agentes é igual: permissão mínima e confirmação humana em ação sensível. Esconder não é proteger.",
         },
         {
           title: "Métricas de analytics confiáveis",
@@ -57,13 +59,15 @@ export const experience = [
           t: "Devolver a confiabilidade aos relatórios usados pela gestão.",
           a: "Corrigi a diferenciação de usuários no cálculo e a view do PostgreSQL, e entreguei novas análises de engajamento de perfil.",
           r: "Relatórios da gestão voltaram a refletir os números reais.",
+          ai: "Avaliar IA depende de métrica certa. Com métrica errada você comemora o que está errado.",
         },
         {
           title: "Revisor de código em 30+ serviços",
-          s: "Plataforma com 40+ serviços e mudanças grandes em andamento: migração GitLab → GitHub, hardening de segurança do PostgreSQL e o domínio de benefícios de saúde.",
+          s: "Plataforma com 40+ serviços e mudanças grandes em andamento: a migração GitLab → GitHub (CI/CD de ~20 repositórios), um hardening que tirou o acesso direto dos serviços ao schema public do PostgreSQL e a construção do domínio de benefícios de saúde e odonto.",
           t: "Garantir qualidade e consistência para além do meu próprio módulo.",
           a: "Atuei como revisor transversal, usando agentes de IA no pré code review para pegar o óbvio e focando em arquitetura, regra de negócio e risco.",
           r: "77 merge requests revisados em mais de 30 serviços, cerca de 2 revisões para cada MR meu.",
+          ai: "Por isso me interessei pelos agentes de code review: o pré-review com IA pega o óbvio, e eu foco em arquitetura, regra de negócio e risco.",
         },
       ],
       en: [
@@ -80,6 +84,7 @@ export const experience = [
           t: "Lead the migration to Java 17 without blocking deliveries or breaking dependent services.",
           a: "Split the work into four coordinated streams, upgraded QueryDSL and internal libraries, reconciled versions through the central Maven BOM, replaced deprecated APIs, fixed logging changed by the new JDK and repaired the test suite without disabling tests.",
           r: "The service stayed releasable at every step, and the migration was later propagated to a second service the same way.",
+          ai: "Splitting a big change into parts that work on their own is exactly what the spec → plan → tasks flow does with agents.",
         },
         {
           title: "End-to-end notification subsystem",
@@ -93,7 +98,7 @@ export const experience = [
           s: "A notification service release reached production with a defect.",
           t: "Stabilize quickly and deliver the feature correctly.",
           a: "Diagnosed the cause, executed a controlled branch revert, re-delivered the feature cleanly and resolved the static-analysis findings the incident surfaced.",
-          r: "Production stabilized and the feature shipped without the defect, with cleaner code than before.",
+          r: "Production stabilized and the feature shipped without the defect, with cleaner code than before. Stabilize first, then fix it properly.",
         },
         {
           title: "Permission bypass closed",
@@ -101,6 +106,7 @@ export const experience = [
           t: "Close the gap so it couldn't be bypassed client-side.",
           a: "Fixed validation at both API and UI layers instead of just hiding the button, and fixed a resource-access flaw.",
           r: "Sensitive actions protected at both layers.",
+          ai: "Same with agents: least privilege and human confirmation on sensitive actions. Hiding is not protecting.",
         },
         {
           title: "Reliable analytics",
@@ -108,13 +114,15 @@ export const experience = [
           t: "Restore the reliability of management reports.",
           a: "Fixed user differentiation in the calculation and the PostgreSQL view, and delivered new profile-engagement analytics.",
           r: "Management reports reflect the real numbers again.",
+          ai: "Evaluating AI depends on the right metric. With the wrong one, you celebrate what is wrong.",
         },
         {
           title: "Code reviewer across 30+ services",
-          s: "A 40+ service platform with large changes in flight: GitLab → GitHub migration, PostgreSQL security hardening and the health benefits domain.",
+          s: "A 40+ service platform with large changes in flight: the GitLab → GitHub migration (CI/CD for ~20 repos), hardening that removed direct service access to the PostgreSQL public schema, and the health & dental benefits domain build-out.",
           t: "Ensure quality and consistency beyond my own module.",
           a: "Acted as a cross-cutting reviewer, using AI agents for pre-review to catch the obvious while I focused on architecture, business rules and risk.",
           r: "77 merge requests reviewed across 30+ services, about 2 reviews for every MR I authored.",
+          ai: "That is why I got into code review agents: AI pre-review catches the obvious, and I focus on architecture, business rules and risk.",
         },
       ],
     },
@@ -132,10 +140,11 @@ export const experience = [
       pt: [
         {
           title: "Criação de sessão 3x mais rápida",
-          s: "Numa plataforma de onboarding de dispositivos com alto volume, alguns usuários recebiam respostas incorretas ou incompletas na criação de sessão.",
+          s: "Numa plataforma de onboarding de dispositivos com muitos microsserviços e alto volume, alguns usuários recebiam respostas incorretas ou incompletas na criação de sessão. O time era internacional e o dia a dia era em inglês.",
           t: "Achar a causa raiz num fluxo que atravessava vários microsserviços.",
           a: "Rastreei a requisição de ponta a ponta pelos correlation IDs no Splunk, reconstruí o payload a partir dos logs e reproduzi a falha localmente. A causa era excesso de dados e campos tratados de forma diferente entre serviços, então redesenhei o payload e padronizei o tratamento.",
           r: "Fluxo estável e criação de sessão 3x mais rápida.",
+          ai: "É o mesmo raciocínio que uso com agentes: menos dado e mais padronizado deixa tudo mais rápido e mais barato. E reproduzir e comparar é como eu valido o que a IA afirma.",
         },
         {
           title: "Novas funcionalidades de impressoras",
@@ -148,10 +157,11 @@ export const experience = [
       en: [
         {
           title: "Session creation 3x faster",
-          s: "On a high-volume device onboarding platform, some users got incorrect or incomplete responses when creating a session.",
+          s: "On a high-volume device onboarding platform with many microservices, some users got incorrect or incomplete responses when creating a session. The team was international and worked in English.",
           t: "Find the root cause in a flow spanning several microservices.",
           a: "Traced the request end to end via correlation IDs in Splunk, rebuilt the payload from logs and reproduced the failure locally. The cause was excess data and inconsistent field handling across services, so I redesigned the payload and standardized the handling.",
           r: "Stable flow and session creation 3x faster.",
+          ai: "Same reasoning I use with agents: less, more standardized data makes everything faster and cheaper. And reproducing and comparing is how I validate what AI claims.",
         },
         {
           title: "New printer features",
@@ -178,8 +188,9 @@ export const experience = [
           title: "De COBOL para Java",
           s: "Sistemas legados de empréstimo, escritos em COBOL, rodando num mainframe crítico.",
           t: "Migrar para Java mantendo todas as regras de negócio e a confiabilidade.",
-          a: "Migrei e adaptei programas para arquiteturas modernas, trabalhando com Java, COBOL, CICS e DB2, e usei Python para análise de dados e automação de tarefas manuais.",
+          a: "Migrei e adaptei programas para arquiteturas modernas, trabalhando com Java, COBOL, CICS e DB2. Também cuidei de suporte e incidentes em programas de empréstimo e usei Python para análise de dados e automação de tarefas manuais.",
           r: "Modernização entregue com confiabilidade e promoção de Trainee a Desenvolvedor Java.",
+          ai: "Código legado é onde a IA mais ajuda a entender, e onde mais precisa ser conferida, porque a regra de negócio está escondida no código.",
         },
       ],
       en: [
@@ -187,8 +198,9 @@ export const experience = [
           title: "From COBOL to Java",
           s: "Legacy loan systems written in COBOL, running on a business-critical mainframe.",
           t: "Migrate to Java while keeping every business rule and the reliability.",
-          a: "Migrated and adapted programs to modern architectures with Java, COBOL, CICS and DB2, and used Python for data analysis and automating manual tasks.",
+          a: "Migrated and adapted programs to modern architectures with Java, COBOL, CICS and DB2. Also handled support and incidents on loan programs and used Python for data analysis and automating manual tasks.",
           r: "Modernization delivered reliably, and a promotion from Trainee to Java Developer.",
+          ai: "Legacy code is where AI helps most to understand, and where it most needs checking, because the business rules hide in the code.",
         },
       ],
     },
