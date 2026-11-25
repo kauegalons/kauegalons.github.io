@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { content, links, projects, experience } from "./content.js";
 import AiSection from "./components/AiSection.jsx";
+import AboutPhoto from "./components/AboutPhoto.jsx";
 import Starfield from "./components/Starfield.jsx";
 import Typewriter from "./components/Typewriter.jsx";
 import Reveal from "./components/Reveal.jsx";
@@ -114,6 +115,7 @@ export default function App() {
                 {t.about.tech.map((x) => <li key={x}>{x}</li>)}
               </ul>
             </div>
+            <AboutPhoto />
           </div>
         </Reveal>
 

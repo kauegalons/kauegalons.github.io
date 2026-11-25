@@ -47,6 +47,7 @@ Todo push na branch `main` faz o build e publica no GitHub Pages automaticamente
 | `src/experience.js` | Experiências no método STAR |
 | `src/aiCases.js` | Casos reais com IA no método STAR |
 | `public/foto.jpg` | Foto da página inicial |
+| `public/sobre.jpg` | Foto da seção "sobre" (enquanto não existir, aparece o quadro "KG") |
 
 ## 🎨 paleta de cores
 
