@@ -17,13 +17,6 @@ export const experience = [
     star: {
       pt: [
         {
-          title: "Tempo de resposta de 15s para 3s",
-          s: "Um fluxo da plataforma levava cerca de 15 segundos para responder.",
-          t: "Reduzir o tempo de resposta sem alterar o comportamento esperado.",
-          a: "Investiguei onde o tempo era gasto e otimizei o ponto crítico do processamento.",
-          r: "O tempo de resposta caiu de 15s para 3s, uma melhora de 80%.",
-        },
-        {
           title: "Liderei a migração Java 11 → 17",
           s: "O backend da rede social corporativa rodava em Java 11 e dependia de bibliotecas compartilhadas com outros serviços.",
           t: "Liderar a migração para Java 17 sem travar as entregas nem quebrar os serviços dependentes.",
@@ -54,6 +47,14 @@ export const experience = [
           ai: "Com agentes é igual: permissão mínima e confirmação humana em ação sensível. Esconder não é proteger.",
         },
         {
+          title: "Segredo fixo removido do código",
+          s: "O Sonar apontou um segredo fixo no código de um serviço.",
+          t: "Tirar o segredo do código sem quebrar o serviço e sem expor o valor.",
+          a: "O valor saiu do código e passou para uma configuração gerenciada pelo time de SRE. Para provar que a configuração do ambiente batia com o código sem expor o valor, colocamos logs temporários do handler até o ponto da chamada, validamos no ambiente de teste e depois removemos os logs extras.",
+          r: "O apontamento sumiu da análise do Sonar e o PR foi aprovado.",
+          ai: "Com agentes vale a mesma regra: credencial só em variável de ambiente, nunca em resposta, arquivo ou log.",
+        },
+        {
           title: "Métricas de analytics confiáveis",
           s: "Um indicador de engajamento total estava inflado e uma view mensal do PostgreSQL devolvia agregados errados.",
           t: "Devolver a confiabilidade aos relatórios usados pela gestão.",
@@ -71,13 +72,6 @@ export const experience = [
         },
       ],
       en: [
-        {
-          title: "Response time from 15s to 3s",
-          s: "A platform flow took about 15 seconds to respond.",
-          t: "Cut the response time without changing the expected behavior.",
-          a: "Investigated where the time was spent and optimized the critical part of the processing.",
-          r: "Response time dropped from 15s to 3s, an 80% improvement.",
-        },
         {
           title: "Led the Java 11 → 17 migration",
           s: "The corporate social network backend ran on Java 11 and depended on libraries shared with other services.",
@@ -107,6 +101,14 @@ export const experience = [
           a: "Fixed validation at both API and UI layers instead of just hiding the button, and fixed a resource-access flaw.",
           r: "Sensitive actions protected at both layers.",
           ai: "Same with agents: least privilege and human confirmation on sensitive actions. Hiding is not protecting.",
+        },
+        {
+          title: "Hardcoded secret removed",
+          s: "Sonar flagged a hardcoded secret in a service's code.",
+          t: "Get the secret out of the code without breaking the service or exposing the value.",
+          a: "The value moved to a configuration managed by the SRE team. To prove the environment config matched the code without exposing it, we added temporary logs from the handler to the call site, validated them in the test environment and then removed them.",
+          r: "The finding disappeared from Sonar and the PR was approved.",
+          ai: "Same rule with agents: credentials only in environment variables, never in a response, file or log.",
         },
         {
           title: "Reliable analytics",
@@ -139,11 +141,11 @@ export const experience = [
     star: {
       pt: [
         {
-          title: "Criação de sessão 3x mais rápida",
+          title: "Criação de sessão de 15s para 3s",
           s: "Numa plataforma de onboarding de dispositivos com muitos microsserviços e alto volume, alguns usuários recebiam respostas incorretas ou incompletas na criação de sessão. O time era internacional e o dia a dia era em inglês.",
           t: "Achar a causa raiz num fluxo que atravessava vários microsserviços.",
           a: "Rastreei a requisição de ponta a ponta pelos correlation IDs no Splunk, reconstruí o payload a partir dos logs e reproduzi a falha localmente. A causa era excesso de dados e campos tratados de forma diferente entre serviços, então redesenhei o payload e padronizei o tratamento.",
-          r: "Fluxo estável e criação de sessão 3x mais rápida.",
+          r: "Fluxo estável e tempo de resposta da criação de sessão de 15s para 3s, uma melhora de 80%.",
           ai: "É o mesmo raciocínio que uso com agentes: menos dado e mais padronizado deixa tudo mais rápido e mais barato. E reproduzir e comparar é como eu valido o que a IA afirma.",
         },
         {
@@ -156,11 +158,11 @@ export const experience = [
       ],
       en: [
         {
-          title: "Session creation 3x faster",
+          title: "Session creation from 15s to 3s",
           s: "On a high-volume device onboarding platform with many microservices, some users got incorrect or incomplete responses when creating a session. The team was international and worked in English.",
           t: "Find the root cause in a flow spanning several microservices.",
           a: "Traced the request end to end via correlation IDs in Splunk, rebuilt the payload from logs and reproduced the failure locally. The cause was excess data and inconsistent field handling across services, so I redesigned the payload and standardized the handling.",
-          r: "Stable flow and session creation 3x faster.",
+          r: "Stable flow and session-creation response time down from 15s to 3s, an 80% improvement.",
           ai: "Same reasoning I use with agents: less, more standardized data makes everything faster and cheaper. And reproducing and comparing is how I validate what AI claims.",
         },
         {

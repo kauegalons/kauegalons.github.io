@@ -1,4 +1,7 @@
 import { aiFlow, aiPrinciples } from "../content.js";
+import { aiCases } from "../aiCases.js";
+import { starLabels } from "../experience.js";
+import StarList from "./StarList.jsx";
 
 export default function AiSection({ t, lang }) {
   return (
@@ -15,6 +18,9 @@ export default function AiSection({ t, lang }) {
           </li>
         ))}
       </ol>
+
+      <h3 className="ai__subtitle">{t.casesTitle}</h3>
+      <StarList items={aiCases[lang]} labels={starLabels[lang]} extraLabel={t.lessonLabel} />
 
       <h3 className="ai__subtitle">{t.principlesTitle}</h3>
       <div className="principles">

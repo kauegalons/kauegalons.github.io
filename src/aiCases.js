@@ -1,0 +1,88 @@
+// Casos reais de trabalho com IA — método STAR + lição
+
+export const aiCases = {
+  pt: [
+    {
+      title: "Uma história de ponta a ponta com agentes",
+      s: "Uma história pedia mostrar ao gestor, na lista de férias para aprovação, se o pedido de abono foi feito dentro do prazo legal: até 15 dias antes do fim do período aquisitivo.",
+      t: "Implementar no backend atrás de um feature toggle, sem quebrar a tela atual.",
+      a: "O specify gerou a spec com 3 cenários e 11 requisitos e levantou 3 dúvidas, que eu respondi. O plan leu o código e descobriu que a rota citada na história não existia (conferi no frontend antes de aceitar) e trocou uma consulta por linha por uma consulta em lote. O analyze, só leitura, achou 13 problemas na documentação antes de qualquer código. Corrigido isso, o implement fez 13 das 15 tarefas com TDD; as duas restantes eram manuais.",
+      r: "Os 143 testes da feature e o build com mais de 15 mil testes passaram sem falha. Depois vieram o teste em par e o PR.",
+      ai: "O agente escreveu boa parte do código, mas o que fez a diferença foi a ordem: entender, planejar e revisar antes de codar.",
+    },
+    {
+      title: "O fuso invertido e os 55 erros que não eram nossos",
+      s: "O plano sugeriu um SQL com AT TIME ZONE '-03:00'. Mais tarde, já com a implementação pronta, um módulo que não tínhamos alterado deu 55 erros.",
+      t: "Garantir que o dia-limite fosse calculado certo e descobrir se os 55 erros vinham da nossa mudança.",
+      a: "O agente de revisão pegou, antes de existir código, que no PostgreSQL esse sinal é invertido e o resultado vira UTC+3. Nos 55 erros, a primeira hipótese do agente (o sandbox) estava errada; então pedi para rodar os mesmos testes numa cópia da branch principal, sem a nossa mudança.",
+      r: "O fuso foi corrigido antes de chegar ao QA. E a branch principal deu os mesmos 55 erros: o problema era do ambiente (Java 17 no Windows abrindo socket local), não do código.",
+      ai: "Não aceito a explicação da IA nem para culpar nem para inocentar uma mudança: comparo com a linha de base. Por isso sempre rodo a revisão entre o plano e a implementação.",
+    },
+    {
+      title: "Os commits que perderam a assinatura",
+      s: "A branch precisava que todos os commits aparecessem como verificados (assinados) no GitHub.",
+      t: "Assinar os commits que faltavam.",
+      a: "Autorizei o agente a reescrever o histórico sem ver o plano antes. Ele usou uma chave local não registrada no GitHub e todos os commits ficaram sem verificação, inclusive os de um colega. Percebi na hora, parei e entendi a causa: reescrever um commit muda todos os que vêm depois. Refizemos pelo caminho certo, recriando os commits pela API do GitHub, que assina, e conferindo que o conteúdo final era idêntico ao anterior.",
+      r: "Commits verificados, o colega continuou creditado e ficou uma regra salva na memória do agente: explicar antes o que vai ser reescrito.",
+      ai: "Operação irreversível exige ver o plano antes de executar. Parte do erro foi meu, porque eu autorizei.",
+    },
+    {
+      title: "Um sistema que eu não conhecia, explicado para um pentest",
+      s: "Uma pessoa ia fazer um teste de invasão num módulo da rede social corporativa, e eu precisava explicar o sistema. Eu também não o conhecia bem.",
+      t: "Mapear rápido o que entra e o que não entra no escopo do teste.",
+      a: "Subi o serviço localmente e usei agentes para ler o código do front e do back, sempre conferindo o que diziam. Descobri, por exemplo, uma tela que era só um atalho para outro produto (fora do escopo) e telas escondidas que precisavam entrar.",
+      r: "Um roteiro com o que entra e o que não entra no teste, feito em poucas horas.",
+      ai: "IA acelera muito o entendimento de código desconhecido, desde que cada afirmação seja conferida.",
+    },
+    {
+      title: "O feedback que virou regra do agente",
+      s: "O agente me dava opções de decisão (por exemplo, o que retornar com lista vazia) sem dizer o que a história pedia.",
+      t: "Fazer o agente ancorar as decisões no que foi pedido.",
+      a: "Corrigi, e a correção ficou salva na memória do agente: em toda decisão, ele cita o que a história pede, marca a opção que segue a história e, se a história não diz nada, avisa.",
+      r: "A regra passou a valer para as próximas sessões.",
+      ai: "Não só uso o agente: quando ele erra, eu corrijo e passo feedback. Faço o mesmo comigo: o que dá errado vira regra ou item de checklist.",
+    },
+  ],
+  en: [
+    {
+      title: "One user story, end to end with agents",
+      s: "A story asked to show managers, in the vacation approval list, whether a vacation sell-back request was made within the legal deadline: up to 15 days before the end of the accrual period.",
+      t: "Implement it in the backend behind a feature toggle without breaking the current screen.",
+      a: "Specify produced the spec with 3 scenarios and 11 requirements and raised 3 questions, which I answered. Plan read the code and found that the route named in the story didn't exist (I checked the frontend before accepting) and replaced a per-row query with a batch query. Analyze, read-only, found 13 issues in the docs before any code. With those fixed, implement completed 13 of 15 tasks with TDD; the remaining two were manual.",
+      r: "All 143 feature tests and the 15,000+ test build passed with no failures, followed by pair testing and the PR.",
+      ai: "The agent wrote much of the code, but what made the difference was the order: understand, plan and review before coding.",
+    },
+    {
+      title: "The inverted time zone and the 55 errors that weren't ours",
+      s: "The plan suggested SQL with AT TIME ZONE '-03:00'. Later, with the implementation done, a module we hadn't touched threw 55 errors.",
+      t: "Make sure the deadline day was computed correctly, and find out whether the 55 errors came from our change.",
+      a: "The review agent caught, before any code existed, that in PostgreSQL that sign is inverted and the result becomes UTC+3. For the 55 errors, the agent's first hypothesis (the sandbox) was wrong, so I had the same tests run on a copy of the main branch, without our change.",
+      r: "The time zone was fixed before reaching QA. And the main branch threw the same 55 errors: the problem was the environment (Java 17 on Windows opening a local socket), not the code.",
+      ai: "I don't accept AI's explanation either to blame or to clear a change: I compare against the baseline. That's why I always run the review between plan and implementation.",
+    },
+    {
+      title: "The commits that lost their signatures",
+      s: "The branch required every commit to show as verified (signed) on GitHub.",
+      t: "Sign the missing commits.",
+      a: "I authorized the agent to rewrite history without seeing the plan first. It used a local key not registered on GitHub, and every commit became unverified, including a teammate's. I noticed right away, stopped and understood the cause: rewriting one commit changes all that follow. We redid it the right way, recreating the commits through the GitHub API, which signs them, and checking the final content was identical.",
+      r: "Commits verified, the teammate kept their credit, and a rule was saved to the agent's memory: explain what will be rewritten before doing it.",
+      ai: "Irreversible operations require seeing the plan before executing. Part of the mistake was mine, because I authorized it.",
+    },
+    {
+      title: "A system I didn't know, explained for a pentest",
+      s: "Someone was going to run a penetration test on a corporate social network module, and I had to explain the system. I didn't know it well either.",
+      t: "Quickly map what's in and out of the test scope.",
+      a: "I ran the service locally and used agents to read the front-end and back-end code, always verifying their claims. I found, for example, a screen that was just a shortcut to another product (out of scope) and hidden screens that needed to be included.",
+      r: "A scope guide for the test, done in a few hours.",
+      ai: "AI greatly speeds up understanding unfamiliar code, as long as every claim is verified.",
+    },
+    {
+      title: "The feedback that became an agent rule",
+      s: "The agent offered me decision options (e.g., what to return for an empty list) without saying what the story asked for.",
+      t: "Make the agent anchor decisions to what was requested.",
+      a: "I corrected it, and the correction was saved to the agent's memory: in every decision it quotes what the story asks, marks the option that follows the story and, if the story is silent, says so.",
+      r: "The rule applied to every following session.",
+      ai: "I don't just use the agent: when it's wrong, I correct it and give feedback. I do the same with myself: what goes wrong becomes a rule or a checklist item.",
+    },
+  ],
+};
