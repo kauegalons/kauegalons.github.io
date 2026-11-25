@@ -1,0 +1,222 @@
+// Experiências — cada conquista no método STAR (Situação, Tarefa, Ação, Resultado)
+
+export const starLabels = {
+  pt: { s: "Situação", t: "Tarefa", a: "Ação", r: "Resultado" },
+  en: { s: "Situation", t: "Task", a: "Action", r: "Result" },
+};
+
+export const experience = [
+  {
+    company: "Senior Sistemas",
+    role: { pt: "Software Engineer II (Pleno)", en: "Software Engineer II (Mid)" },
+    period: { pt: "OUT 2025 — HOJE", en: "OCT 2025 — PRESENT" },
+    context: {
+      pt: "Plataforma de HCM (RH) com 40+ microsserviços independentes: folha, benefícios, ponto, férias, analytics e rede social corporativa.",
+      en: "HCM platform with 40+ independently deployed microservices: payroll, benefits, time & attendance, vacation, analytics and a corporate social network.",
+    },
+    star: {
+      pt: [
+        {
+          title: "Tempo de resposta de 15s para 3s",
+          s: "Um fluxo da plataforma levava cerca de 15 segundos para responder.",
+          t: "Reduzir o tempo de resposta sem alterar o comportamento esperado.",
+          a: "Investiguei onde o tempo era gasto e otimizei o ponto crítico do processamento.",
+          r: "O tempo de resposta caiu de 15s para 3s, uma melhora de 80%.",
+        },
+        {
+          title: "Liderei a migração Java 11 → 17",
+          s: "O backend da rede social corporativa rodava em Java 11 e dependia de bibliotecas compartilhadas com outros serviços.",
+          t: "Liderar a migração para Java 17 sem travar as entregas nem quebrar os serviços dependentes.",
+          a: "Dividi o trabalho em quatro frentes coordenadas, atualizei QueryDSL e as bibliotecas internas, reconciliei versões pelo Maven BOM central, troquei APIs depreciadas, corrigi o log que mudou com o JDK novo e consertei a suíte de testes sem desligar nenhum teste.",
+          r: "O serviço continuou publicável a cada passo, e a migração foi levada depois para um segundo serviço pelo mesmo caminho.",
+        },
+        {
+          title: "Subsistema de notificações de ponta a ponta",
+          s: "A rede social corporativa não avisava as pessoas sobre novidades em posts e espaços colaborativos.",
+          t: "Projetar e construir a capacidade de notificação do zero.",
+          a: "Criei tipos de evento próprios para posts e espaços e 4 modos de entrega: individual ou em massa, com ou sem link direto para o conteúdo. Testes com JUnit e Mockito.",
+          r: "Subsistema em produção cobrindo todos os cenários de entrega da plataforma.",
+        },
+        {
+          title: "Release com defeito em produção",
+          s: "Uma versão do serviço de notificações foi para produção com defeito.",
+          t: "Estabilizar rápido e entregar a funcionalidade corretamente.",
+          a: "Diagnostiquei a causa, fiz um revert controlado da branch, entreguei a funcionalidade de novo de forma limpa e resolvi os apontamentos de análise estática que o incidente revelou.",
+          r: "Produção estabilizada e funcionalidade entregue sem o defeito, com o código mais limpo do que antes.",
+        },
+        {
+          title: "Brecha de permissão fechada",
+          s: "Usuários sem permissão conseguiam editar e excluir perfis corporativos.",
+          t: "Fechar a brecha de forma que não pudesse ser contornada pelo cliente.",
+          a: "Corrigi a validação na API e na interface, em vez de só esconder o botão, e corrigi também uma falha de acesso a recurso.",
+          r: "Ações sensíveis protegidas nas duas camadas.",
+        },
+        {
+          title: "Métricas de analytics confiáveis",
+          s: "Um indicador de engajamento total estava inflado e uma view mensal do PostgreSQL devolvia agregados errados.",
+          t: "Devolver a confiabilidade aos relatórios usados pela gestão.",
+          a: "Corrigi a diferenciação de usuários no cálculo e a view do PostgreSQL, e entreguei novas análises de engajamento de perfil.",
+          r: "Relatórios da gestão voltaram a refletir os números reais.",
+        },
+        {
+          title: "Revisor de código em 30+ serviços",
+          s: "Plataforma com 40+ serviços e mudanças grandes em andamento: migração GitLab → GitHub, hardening de segurança do PostgreSQL e o domínio de benefícios de saúde.",
+          t: "Garantir qualidade e consistência para além do meu próprio módulo.",
+          a: "Atuei como revisor transversal, usando agentes de IA no pré code review para pegar o óbvio e focando em arquitetura, regra de negócio e risco.",
+          r: "77 merge requests revisados em mais de 30 serviços, cerca de 2 revisões para cada MR meu.",
+        },
+      ],
+      en: [
+        {
+          title: "Response time from 15s to 3s",
+          s: "A platform flow took about 15 seconds to respond.",
+          t: "Cut the response time without changing the expected behavior.",
+          a: "Investigated where the time was spent and optimized the critical part of the processing.",
+          r: "Response time dropped from 15s to 3s, an 80% improvement.",
+        },
+        {
+          title: "Led the Java 11 → 17 migration",
+          s: "The corporate social network backend ran on Java 11 and depended on libraries shared with other services.",
+          t: "Lead the migration to Java 17 without blocking deliveries or breaking dependent services.",
+          a: "Split the work into four coordinated streams, upgraded QueryDSL and internal libraries, reconciled versions through the central Maven BOM, replaced deprecated APIs, fixed logging changed by the new JDK and repaired the test suite without disabling tests.",
+          r: "The service stayed releasable at every step, and the migration was later propagated to a second service the same way.",
+        },
+        {
+          title: "End-to-end notification subsystem",
+          s: "The corporate social network didn't notify people about activity in posts and collaborative spaces.",
+          t: "Design and build the notification capability from scratch.",
+          a: "Created dedicated event types for posts and spaces and 4 delivery modes: single or bulk, with or without deep links. Tested with JUnit and Mockito.",
+          r: "Subsystem in production covering every delivery scenario on the platform.",
+        },
+        {
+          title: "Defective production release",
+          s: "A notification service release reached production with a defect.",
+          t: "Stabilize quickly and deliver the feature correctly.",
+          a: "Diagnosed the cause, executed a controlled branch revert, re-delivered the feature cleanly and resolved the static-analysis findings the incident surfaced.",
+          r: "Production stabilized and the feature shipped without the defect, with cleaner code than before.",
+        },
+        {
+          title: "Permission bypass closed",
+          s: "Users without permission could edit and delete corporate profiles.",
+          t: "Close the gap so it couldn't be bypassed client-side.",
+          a: "Fixed validation at both API and UI layers instead of just hiding the button, and fixed a resource-access flaw.",
+          r: "Sensitive actions protected at both layers.",
+        },
+        {
+          title: "Reliable analytics",
+          s: "A total-engagement metric was inflated and a monthly PostgreSQL view returned wrong aggregates.",
+          t: "Restore the reliability of management reports.",
+          a: "Fixed user differentiation in the calculation and the PostgreSQL view, and delivered new profile-engagement analytics.",
+          r: "Management reports reflect the real numbers again.",
+        },
+        {
+          title: "Code reviewer across 30+ services",
+          s: "A 40+ service platform with large changes in flight: GitLab → GitHub migration, PostgreSQL security hardening and the health benefits domain.",
+          t: "Ensure quality and consistency beyond my own module.",
+          a: "Acted as a cross-cutting reviewer, using AI agents for pre-review to catch the obvious while I focused on architecture, business rules and risk.",
+          r: "77 merge requests reviewed across 30+ services, about 2 reviews for every MR I authored.",
+        },
+      ],
+    },
+  },
+  {
+    company: "Wipro",
+    tab: "Wipro · 2024–25",
+    role: { pt: "Software Engineer", en: "Software Engineer" },
+    period: { pt: "OUT 2024 — OUT 2025", en: "OCT 2024 — OCT 2025" },
+    context: {
+      pt: "Consultoria para uma fabricante global de tecnologia e dispositivos. Time internacional, dia a dia em inglês.",
+      en: "Consulting engagement for a global technology & device manufacturer. International, English-speaking team.",
+    },
+    star: {
+      pt: [
+        {
+          title: "Criação de sessão 3x mais rápida",
+          s: "Numa plataforma de onboarding de dispositivos com alto volume, alguns usuários recebiam respostas incorretas ou incompletas na criação de sessão.",
+          t: "Achar a causa raiz num fluxo que atravessava vários microsserviços.",
+          a: "Rastreei a requisição de ponta a ponta pelos correlation IDs no Splunk, reconstruí o payload a partir dos logs e reproduzi a falha localmente. A causa era excesso de dados e campos tratados de forma diferente entre serviços, então redesenhei o payload e padronizei o tratamento.",
+          r: "Fluxo estável e criação de sessão 3x mais rápida.",
+        },
+        {
+          title: "Novas funcionalidades de impressoras",
+          s: "A plataforma de onboarding precisava suportar novas funcionalidades de impressoras.",
+          t: "Implementar sem comprometer os fluxos existentes, num time internacional em inglês.",
+          a: "Desenvolvi as funcionalidades com Java e Spring Boot e participei de code reviews e discussões de arquitetura.",
+          r: "Funcionalidades entregues em colaboração com times globais.",
+        },
+      ],
+      en: [
+        {
+          title: "Session creation 3x faster",
+          s: "On a high-volume device onboarding platform, some users got incorrect or incomplete responses when creating a session.",
+          t: "Find the root cause in a flow spanning several microservices.",
+          a: "Traced the request end to end via correlation IDs in Splunk, rebuilt the payload from logs and reproduced the failure locally. The cause was excess data and inconsistent field handling across services, so I redesigned the payload and standardized the handling.",
+          r: "Stable flow and session creation 3x faster.",
+        },
+        {
+          title: "New printer features",
+          s: "The onboarding platform needed to support new printer features.",
+          t: "Implement them without compromising existing flows, in an international English-speaking team.",
+          a: "Built the features with Java and Spring Boot and took part in code reviews and architecture discussions.",
+          r: "Features delivered in collaboration with global teams.",
+        },
+      ],
+    },
+  },
+  {
+    company: "Wipro",
+    tab: "Wipro · 2022–24",
+    role: { pt: "Trainee → Desenvolvedor Java", en: "Trainee → Java Developer" },
+    period: { pt: "ABR 2022 — OUT 2024", en: "APR 2022 — OCT 2024" },
+    context: {
+      pt: "Consultoria no setor bancário, em ambiente mainframe crítico para o negócio.",
+      en: "Consulting engagement in the banking sector, in a business-critical mainframe environment.",
+    },
+    star: {
+      pt: [
+        {
+          title: "De COBOL para Java",
+          s: "Sistemas legados de empréstimo, escritos em COBOL, rodando num mainframe crítico.",
+          t: "Migrar para Java mantendo todas as regras de negócio e a confiabilidade.",
+          a: "Migrei e adaptei programas para arquiteturas modernas, trabalhando com Java, COBOL, CICS e DB2, e usei Python para análise de dados e automação de tarefas manuais.",
+          r: "Modernização entregue com confiabilidade e promoção de Trainee a Desenvolvedor Java.",
+        },
+      ],
+      en: [
+        {
+          title: "From COBOL to Java",
+          s: "Legacy loan systems written in COBOL, running on a business-critical mainframe.",
+          t: "Migrate to Java while keeping every business rule and the reliability.",
+          a: "Migrated and adapted programs to modern architectures with Java, COBOL, CICS and DB2, and used Python for data analysis and automating manual tasks.",
+          r: "Modernization delivered reliably, and a promotion from Trainee to Java Developer.",
+        },
+      ],
+    },
+  },
+  {
+    company: "Colégio Positivo",
+    role: { pt: "Estagiário de Desenvolvimento", en: "Software Development Intern" },
+    period: { pt: "SET 2021 — MAR 2022", en: "SEP 2021 — MAR 2022" },
+    context: null,
+    star: {
+      pt: [
+        {
+          title: "Alocação de salas e site da escola",
+          s: "A equipe administrativa precisava organizar a alocação de salas, e o site da escola precisava de novas funcionalidades.",
+          t: "Criar ferramentas que deixassem a operação mais eficiente.",
+          a: "Desenvolvi aplicações de alocação de salas e funcionalidades em JavaScript para o site.",
+          r: "Mais eficiência operacional e uma experiência melhor para alunos e equipe.",
+        },
+      ],
+      en: [
+        {
+          title: "Classroom scheduling and school website",
+          s: "The admin team needed to organize classroom allocation, and the school website needed new features.",
+          t: "Build tools that made operations more efficient.",
+          a: "Built classroom-scheduling applications and JavaScript features for the website.",
+          r: "Better operational efficiency and a better experience for students and staff.",
+        },
+      ],
+    },
+  },
+];
