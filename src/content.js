@@ -177,7 +177,7 @@ export const content = {
         "IA aplicada ao desenvolvimento.",
         "software ponta a ponta, com IA.",
       ],
-      bio: "Engenheiro de software em Curitiba. Construo backends em Java e Spring Boot e já construo com IA, ponta a ponta. Busco oportunidades como AI Engineer.",
+      bio: "Engenheiro de software em Curitiba. Construo backends em Java e Spring Boot e fluxos de IA com agentes orquestrados, ponta a ponta. Busco vagas remotas como AI Engineer.",
       cta: "Fale comigo",
       cta2: "Ver projetos",
     },
@@ -186,7 +186,7 @@ export const content = {
       paragraphs: [
         "Sou engenheiro de software com 5 anos de experiência em backend Java e Spring Boot, construindo microsserviços para plataformas grandes e críticas para o negócio. Sou formado em Ciência da Computação pela Universidade Positivo e falo inglês avançado (C1).",
         "Na Wipro, migrei sistemas bancários legados de COBOL para Java em ambiente mainframe e fui promovido de Trainee a Desenvolvedor Java. Depois, num time internacional em inglês, desenvolvi microsserviços em Java e Spring Boot para a plataforma de onboarding de dispositivos de uma fabricante global de tecnologia. Na Senior Sistemas, numa plataforma de HCM com 40+ microsserviços, liderei a migração do Java 11 para o 17, construí o subsistema de notificações de ponta a ponta e atuo como revisor de código em 30+ serviços.",
-        "Hoje já construo com IA no dia a dia e busco oportunidades como AI Engineer, construindo sistemas com LLMs integrados ao produto, RAG e evals.",
+        "Hoje construo fluxos de desenvolvimento com IA: orquestro agentes e subagentes especializados, com engenharia de contexto, guardrails e quality gates em cada etapa. Busco vagas remotas como AI Engineer, construindo sistemas com LLMs integrados ao produto, RAG e evals.",
       ],
       techIntro: "Tecnologias com que tenho trabalhado:",
       tech,
@@ -209,7 +209,7 @@ export const content = {
     contact: {
       title: "contato",
       heading: "Bora conversar?",
-      text: "Estou aberto a oportunidades em Java e IA, e também a trocar ideia sobre agentes, LLMs e backend. Minha caixa de entrada está sempre aberta!",
+      text: "Estou aberto a vagas remotas como AI Engineer e em Java, e também a trocar ideia sobre agentes, LLMs e backend. Minha caixa de entrada está sempre aberta!",
       button: "Dizer oi 👋",
     },
     footer: "Feito com ☕ e React por Kauê Galon",
@@ -224,7 +224,7 @@ export const content = {
         "AI applied to software development.",
         "end-to-end software, with AI.",
       ],
-      bio: "Software engineer based in Curitiba, Brazil. I build Java / Spring Boot backends and I already build with AI, end to end. Looking for opportunities as an AI Engineer.",
+      bio: "Software engineer based in Curitiba, Brazil. I build Java / Spring Boot backends and AI workflows with orchestrated agents, end to end. Looking for remote AI Engineer roles.",
       cta: "Get in touch",
       cta2: "See projects",
     },
@@ -233,7 +233,7 @@ export const content = {
       paragraphs: [
         "I'm a software engineer with 5 years of experience in Java and Spring Boot backends, building microservices for large-scale, business-critical platforms. I hold a Computer Science degree from Universidade Positivo and speak advanced English (C1).",
         "At Wipro, I migrated legacy banking systems from COBOL to Java in a mainframe environment and was promoted from Trainee to Java Developer. Then, in an international English-speaking team, I built Java and Spring Boot microservices for the device onboarding platform of a global technology manufacturer. At Senior Sistemas, on an HCM platform with 40+ microservices, I led the Java 11 → 17 migration, built the notification subsystem end to end and act as a code reviewer across 30+ services.",
-        "Today I already build with AI every day, and I'm looking for opportunities as an AI Engineer, building systems with LLMs integrated into the product, RAG and evals.",
+        "Today I build AI-driven development workflows: I orchestrate specialized agents and subagents, with context engineering, guardrails and quality gates at every step. I'm looking for remote AI Engineer roles, building systems with LLMs integrated into the product, RAG and evals.",
       ],
       techIntro: "Technologies I've been working with:",
       tech,
@@ -256,7 +256,7 @@ export const content = {
     contact: {
       title: "contact",
       heading: "Let's talk?",
-      text: "I'm open to opportunities in Java and AI, and always happy to chat about agents, LLMs and backend. My inbox is always open!",
+      text: "I'm open to remote AI Engineer and Java roles, and always happy to chat about agents, LLMs and backend. My inbox is always open!",
       button: "Say hi 👋",
     },
     footer: "Built with ☕ and React by Kauê Galon",
