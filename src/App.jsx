@@ -86,6 +86,7 @@ export default function App() {
         <section className="intro">
           <Starfield />
           <div className="intro__content">
+            <div className="intro__text">
             <p className="mono accent intro__hi">{t.intro.hi}</p>
             <h1 className="intro__name">
               {t.intro.name}<span className="blink accent">.</span>
@@ -95,6 +96,10 @@ export default function App() {
             <div className="intro__cta">
               <a href="#contato" className="btn btn--solid">{t.intro.cta}</a>
               <a href="#projetos" className="btn">{t.intro.cta2} →</a>
+            </div>
+            </div>
+            <div className="intro__photo">
+              <img src="/foto.jpg" alt="Kauê Galon" width="640" height="640" />
             </div>
           </div>
         </section>
@@ -108,11 +113,6 @@ export default function App() {
               <ul className="tech-grid">
                 {t.about.tech.map((x) => <li key={x}>{x}</li>)}
               </ul>
-            </div>
-            <div className="photo">
-              {/* Para usar sua foto: coloque em public/foto.jpg e troque o div abaixo por
-                  <img src="/foto.jpg" alt="Kauê Galon" /> */}
-              <div className="photo__placeholder">KG</div>
             </div>
           </div>
         </Reveal>
